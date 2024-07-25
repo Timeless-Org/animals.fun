@@ -1,10 +1,1 @@
-import { http, createConfig } from "wagmi";
-import { mainnet, sepolia } from "wagmi/chains";
-
-export const config = createConfig({
-  chains: [mainnet, sepolia],
-  transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-  },
-});
+export const CONTRACT_ADDRESS = "0xA7b547061cA0324BD3357C3bcb01A71071E52E8E";

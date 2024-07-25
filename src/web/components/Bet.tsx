@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHorse } from "@fortawesome/free-solid-svg-icons";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
-import Modal from "./Modal/BedModal";
+import BetModal from "@/components/Modal/BetModal";
 
-const sampleBed = [
+const sampleBet = [
   {
     choice: 1,
     name: "Alice",
@@ -25,10 +25,11 @@ const sampleBed = [
   },
 ];
 
-export const Bed = () => {
-  const [bed, setBed] = useState(sampleBed);
+export const Bet = () => {
+  const [bet, setBet] = useState(sampleBet);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [elements, setElements] = useState<JSX.Element[]>([]);
+  const [choice, setChoice] = useState<number>(0);
 
   const generateRandomAddress = () => {
     return [...Array(40)]
@@ -66,7 +67,8 @@ export const Bed = () => {
     setElements(newElements);
   }, []);
 
-  const openModal = () => {
+  const openModal = (choice: number) => {
+    setChoice(choice);
     setIsModalOpen(true);
   };
 
@@ -76,32 +78,32 @@ export const Bed = () => {
 
   return (
     <div className="flex items-center justify-between w-full h-full space-x-4">
-      <Modal isOpen={isModalOpen} closeModal={closeModal} />
-      {bed.map((bed) => (
+      <BetModal isOpen={isModalOpen} closeModal={closeModal} choice={choice} />
+      {bet.map((bet) => (
         <div
-          key={bed.choice}
+          key={bet.choice}
           className="flex flex-col items-center justify-center w-1/4 space-y-5"
         >
-          <p className="text-text-main font-bold text-xl">{bed.name}</p>
+          <p className="text-text-main font-bold text-xl">{bet.name}</p>
           <FontAwesomeIcon
             icon={faHorse}
             className={`${
-              bed.choice === 1
+              bet.choice === 1
                 ? "text-choice-1"
-                : bed.choice === 2
+                : bet.choice === 2
                 ? "text-choice-2"
-                : bed.choice === 3
+                : bet.choice === 3
                 ? "text-choice-3"
-                : bed.choice === 4
+                : bet.choice === 4
                 ? "text-choice-4"
                 : ""
             }  text-5xl`}
           />
           <button
             className="text-btn-text-main bg-btn-main py-1 px-4 rounded-md"
-            onClick={openModal}
+            onClick={() => openModal(bet.choice)}
           >
-            Bed
+            Bet
           </button>
           <div className="flex flex-col items-center justify-center w-full border py-3 rounded-md">
             {elements}
