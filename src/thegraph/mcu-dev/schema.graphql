@@ -1,0 +1,6 @@
+type ExampleEntity @entity {
+  id: Bytes!
+  count: BigInt!
+  marketId: BigInt! # uint256
+  bettor: Bytes! # address
+}

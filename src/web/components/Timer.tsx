@@ -4,30 +4,43 @@ import { useState, useEffect } from "react";
 
 export const Timer = () => {
   const [raceStartsIn, setRaceStartsIn] = useState(3600);
-  const [raceEndsIn, setRaceEndsIn] = useState(7200);
+  const [raceEndsIn, setRaceEndsIn] = useState(3600);
+  const [isRaceStarted, setIsRaceStarted] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRaceStartsIn((prevSeconds) => {
-        if (prevSeconds > 0) {
-          return prevSeconds - 1;
-        } else {
-          clearInterval(interval);
-          return 0;
-        }
-      });
-      setRaceEndsIn((prevSeconds) => {
-        if (prevSeconds > 0) {
-          return prevSeconds - 1;
-        } else {
-          clearInterval(interval);
-          return 0;
-        }
-      });
-    }, 1000);
+    if (raceStartsIn > 0) {
+      const startInterval = setInterval(() => {
+        setRaceStartsIn((prevSeconds) => {
+          if (prevSeconds > 0) {
+            return prevSeconds - 1;
+          } else {
+            clearInterval(startInterval);
+            setIsRaceStarted(true);
+            return 0;
+          }
+        });
+      }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(startInterval);
+    }
+  }, [raceStartsIn]);
+
+  useEffect(() => {
+    if (isRaceStarted && raceEndsIn > 0) {
+      const endInterval = setInterval(() => {
+        setRaceEndsIn((prevSeconds) => {
+          if (prevSeconds > 0) {
+            return prevSeconds - 1;
+          } else {
+            clearInterval(endInterval);
+            return 0;
+          }
+        });
+      }, 1000);
+
+      return () => clearInterval(endInterval);
+    }
+  }, [isRaceStarted, raceEndsIn]);
 
   const formatTime = (totalSeconds: number) => {
     const hours = Math.floor(totalSeconds / 3600);
