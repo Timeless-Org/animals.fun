@@ -22,6 +22,25 @@ cd animal-fun
 ```bash
 graph add 0x8208ced2932973f71eff272e7f02ddd4582e6096 ./subgraph.yaml \
   --abi ./abis/AnimalFun.json \
-  --contract-name AnimalFun \
+  --contract-name AnimalFunContract \
   --network-file ./network.json
+```
+
+## Build Subgraph
+
+```bash
+graph build
+```
+
+## Deploy Subgraph
+
+```bash
+graph auth --studio <DEPLOY_KEY>
+graph deploy --studio <SUBGRAPH_SLUG>
+```
+
+## ReDeploy Subgraph
+
+```bash
+graph deploy --network base-sepolia
 ```
