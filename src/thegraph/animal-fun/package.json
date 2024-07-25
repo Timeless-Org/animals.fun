@@ -1,13 +1,13 @@
 {
-  "name": "amoy",
+  "name": "base-sepolia",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ amoy",
-    "create-local": "graph create --node http://localhost:8020/ amoy",
-    "remove-local": "graph remove --node http://localhost:8020/ amoy",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 amoy",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ baseSepolia",
+    "create-local": "graph create --node http://localhost:8020/ baseSepolia",
+    "remove-local": "graph remove --node http://localhost:8020/ baseSepolia",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 baseSepolia",
     "test": "graph test"
   },
   "dependencies": {

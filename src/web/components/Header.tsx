@@ -10,11 +10,13 @@ export const Header = () => {
   const { connect } = useConnect();
   return (
     <div className="w-full flex justify-between items-center">
-      <Image src="/static/img/logo.png" width={72} height={72} alt="logo" />
+      <Image src="/static/img/logo.png" width={120} height={120} alt="logo" />
       <Navigation />
       <div>
         {isConnected ? (
-          <p className="text-text-main">{address?.slice(0, 6)}...{address?.slice(-4)}</p>
+          <p className="text-text-main">
+            {address?.slice(0, 6)}...{address?.slice(-4)}
+          </p>
         ) : (
           <button
             onClick={() => connect({ connector: injected() })}

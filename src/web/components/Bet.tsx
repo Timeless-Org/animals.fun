@@ -1,27 +1,28 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHorse } from "@fortawesome/free-solid-svg-icons";
+import { faHorse, faCrow } from "@fortawesome/free-solid-svg-icons";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import BetModal from "@/components/Modal/BetModal";
 
 const sampleBet = [
   {
     choice: 1,
-    name: "Alice",
+    name: "Oryx/Bird only",
   },
   {
     choice: 2,
-    name: "Bob",
+    name: "Ostrich",
   },
   {
     choice: 3,
-    name: "Charlie",
+    name: "Zebra",
   },
   {
     choice: 4,
-    name: "Dave",
+    name: "Boar",
   },
 ];
 
@@ -85,20 +86,40 @@ export const Bet = () => {
           className="flex flex-col items-center justify-center w-1/4 space-y-5"
         >
           <p className="text-text-main font-bold text-xl">{bet.name}</p>
-          <FontAwesomeIcon
-            icon={faHorse}
-            className={`${
-              bet.choice === 1
-                ? "text-choice-1"
-                : bet.choice === 2
-                ? "text-choice-2"
-                : bet.choice === 3
-                ? "text-choice-3"
-                : bet.choice === 4
-                ? "text-choice-4"
-                : ""
-            }  text-5xl`}
-          />
+          <div className="h-36 flex items-center justify-center">
+            {bet.choice === 1 && (
+              <Image
+                src="/static/img/bird.png"
+                alt="oryx"
+                width={130}
+                height={130}
+              />
+            )}
+            {bet.choice === 2 && (
+              <Image
+                src="/static/img/ostrich.png"
+                alt="ostrich"
+                width={130}
+                height={130}
+              />
+            )}
+            {bet.choice === 3 && (
+              <Image
+                src="/static/img/zebra.png"
+                alt="zebra"
+                width={130}
+                height={130}
+              />
+            )}
+            {bet.choice === 4 && (
+              <Image
+                src="/static/img/boar.png"
+                alt="boar"
+                width={130}
+                height={130}
+              />
+            )}
+          </div>
           <button
             className="text-btn-text-main bg-btn-main py-1 px-4 rounded-md"
             onClick={() => openModal(bet.choice)}
