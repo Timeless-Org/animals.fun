@@ -12,9 +12,9 @@ https://github.com/user-attachments/assets/c49fc47f-41f3-406f-a0c4-59f180ecaabc
 
 ## Docs
 
-[contract](./contract/README.md)
-[web](./src/web/README.md)
-[the graph](./thegraph/README.md)
+- [contract](./src/contract/README.md)
+- [web](./src/web/README.md)
+- [the graph](./src/thegraph/README.md)
 
 ## Tech
 
