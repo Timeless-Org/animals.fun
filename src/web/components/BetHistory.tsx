@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHorse } from "@fortawesome/free-solid-svg-icons";
 
-const choiceName = ["Alice", "Bob", "Charlie", "Dave"];
+const choiceName = ["Oryx/Bird", "Ostrich", "Zebra", "Boar"];
 
 const sampleBetHistory = [
   {
@@ -46,30 +47,47 @@ export const BetHistory = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full">
-        {betHistory.map((bet) => (
-          <div key={bet.id} className="py-2 border-t border-gray-300 w-2/3">
-            <div className="text-gray-500 text-sm flex justify-between items-center w-full">
-              <p
-                className={`${
-                  bet.choice === 1
-                    ? "text-choice-1"
-                    : bet.choice === 2
-                    ? "text-choice-2"
-                    : bet.choice === 3
-                    ? "text-choice-3"
-                    : bet.choice === 4
-                    ? "text-choice-4"
-                    : ""
-                }`}
-              >
-                <FontAwesomeIcon icon={faHorse} className="h-5 w-5" />
-              </p>
-              <p className="text-text-secondary">
-                {choiceName[bet.choice - 1]}
-              </p>
-            </div>
+      {betHistory.map((bet) => (
+        <div key={bet.id} className="py-2 border-t border-gray-300 w-2/3">
+          <div className="text-gray-400 text-sm flex justify-between items-center w-full">
+            <p>
+              {bet.choice === 1 && (
+                <Image
+                  src="/static/img/bird.png"
+                  alt="oryx"
+                  width={40}
+                  height={40}
+                />
+              )}
+              {bet.choice === 2 && (
+                <Image
+                  src="/static/img/ostrich.png"
+                  alt="ostrich"
+                  width={40}
+                  height={40}
+                />
+              )}
+              {bet.choice === 3 && (
+                <Image
+                  src="/static/img/zebra.png"
+                  alt="zebra"
+                  width={40}
+                  height={40}
+                />
+              )}
+              {bet.choice === 4 && (
+                <Image
+                  src="/static/img/boar.png"
+                  alt="boar"
+                  width={40}
+                  height={40}
+                />
+              )}
+            </p>
+            <p className="text-text-secondary">{choiceName[bet.choice - 1]}</p>
           </div>
-        ))}
+        </div>
+      ))}
     </div>
   );
 };

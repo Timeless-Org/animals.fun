@@ -54,12 +54,12 @@ export const Timer = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-text-secondary text-white py-4 px-10 rounded-lg">
-      <p className="text-2xl font-semibold mb-4 text-bg-main">
+      <p className="text-2xl font-semibold text-bg-main">
         Place your bets, race starts in {formatTime(raceStartsIn)}
       </p>
-      <p className="text-2xl font-semibold text-bg-main">
+      {/* <p className="text-2xl font-semibold text-bg-main">
         Race ends in {formatTime(raceEndsIn)}
-      </p>
+      </p> */}
     </div>
   );
 };
