@@ -1,5 +1,3 @@
-
-
 ## Create a new subgraph
 
 ```bash

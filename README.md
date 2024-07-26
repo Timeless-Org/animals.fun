@@ -10,6 +10,12 @@ https://github.com/user-attachments/assets/c49fc47f-41f3-406f-a0c4-59f180ecaabc
 
 <img width="1370" alt="Screenshot 2024-07-26 at 8 50 12" src="https://github.com/user-attachments/assets/d4ecf5ac-2a8b-43c3-bff9-0735b3d0882c">
 
+## Docs
+
+[contract](./contract/README.md)
+[web](./src/web/README.md)
+[the graph](./thegraph/README.md)
+
 ## Tech
 
 - Next.js
