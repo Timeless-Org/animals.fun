@@ -53,9 +53,9 @@ export const Timer = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-text-secondary text-white py-4 px-10 rounded-lg">
-      <p className="text-2xl font-semibold text-bg-main">
-        Place your bets, race starts in {formatTime(raceStartsIn)}
+    <div className="flex flex-col items-center justify-center text-white py-2 px-6 rounded-lg bg-bg-main bg-opacity-70">
+      <p className="text-lg font-semibold text-white">
+        End of Bet {formatTime(raceStartsIn)}
       </p>
       {/* <p className="text-2xl font-semibold text-bg-main">
         Race ends in {formatTime(raceEndsIn)}

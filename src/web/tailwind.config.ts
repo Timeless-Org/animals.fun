@@ -18,17 +18,13 @@ const config = {
     },
     extend: {
       colors: {
-        "bg-main": "#232946",
-        "bg-third": "#b8c1ec",
-        "text-main": "#fffffe",
-        "text-secondary": "#b8c1ec",
-        "btn-main": "#eebbc3",
-        "btn-text-main": "#232946",
-        "bg-secondary": "#121629",
-        "choice-1": "#eebbc3",
-        "choice-2": "#b8c1ec",
-        "choice-3": "#e63946",
-        "choice-4": "#ffd166",
+        "bg-main": "#8B4513",
+        "bg-secondary": "#4B5320",
+        "bg-third": "#556B2F",
+        "text-main": "#F5F5DC",
+        "text-secondary": "#F5DEB3",
+        "btn-main": "#CD853F",
+        "btn-text-main": "#FFFFFF",
       },
       keyframes: {
         "accordion-down": {
