@@ -62,7 +62,7 @@ export function PieChartComponent() {
                       y={(viewBox.cy || 0) + 24}
                       style={{ fill: "var(--text-main)" }}
                     >
-                      Bettor
+                      Bettors
                     </tspan>
                   </text>
                 );
